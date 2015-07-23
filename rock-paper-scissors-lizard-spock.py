@@ -1,13 +1,12 @@
-# Rock-paper-scissors-lizard-Spock template
-
-# https://class.coursera.org/interactivepython1-007/human_grading/view/courses/975643/assessments/28/submissions
+# Rock-paper-scissors-lizard-Spock Python game
+# Created with love by PableraShow
 
 # The key idea of this program is to equate the strings
 # "rock", "paper", "scissors", "lizard", "Spock" to numbers
 # as follows:
 #
 # 0 - rock
-# 1 - spock
+# 1 - Spock
 # 2 - paper
 # 3 - lizard
 # 4 - scissors
@@ -20,76 +19,76 @@ def name_to_number(name):
     # convert name to number using if/elif/else
     # don't forget to return the result!
     if name == 'rock':
-        name = 0
+        return 0
     elif name == 'spock':
-        name = 1
+        return 1
     elif name == 'paper':
-        name = 2
+        return 2
     elif name == 'lizard':
-        name = 3
+        return 3
     elif name == 'scissors':
-        name = 4
+        return 4
     else:
-        print 'debug test / name_to_number: ' + name
-    return name
+        return '- debug test - name_to_number - ' + name
 
 
 def number_to_name(number):
     # convert number to a name using if/elif/else
     # don't forget to return the result!
     if number == 0:
-        number = 'rock'
+        return 'rock'
     elif number == 1:
-        number = 'spock'
+        return 'spock'
     elif number == 2:
-        number = 'paper'
+        return 'paper'
     elif number == 3:
-        number = 'lizard'
+        return 'lizard'
     elif number == 4:
-        number = 'scissors'
+        return 'scissors'
     else:
-        print 'debug test / number_to_name: ' + number
-    return number
+        return '- debug test - number_to_name - ' + number
 
 
 def rpsls(player_choice): 
-    # print a blank line to separate consecutive games
-    print ''
-    
-    # print out the message for the player's choice
-    print 'The player has chosen ' + player_choice + '.'
 
     # convert the player's choice to player_number using the function name_to_number()
-    play_number = name_to_number(player_choice)
+    player_number = name_to_number(player_choice)
 
     # compute random guess for comp_number using random.randrange()
     comp_number = random.randrange(0, 4)
 
     # convert comp_number to comp_choice using the function number_to_name()
-    comp_choice = str(number_to_name(comp_number))
+    comp_choice = number_to_name(comp_number)
     
+    # compute difference of comp_number and player_number modulo five
+    winner = (comp_number - player_number) % 5
+
+    # print out the message for the player's choice
+    print 'Player chooses ' + player_choice
+
     # print out the message for computer's choice
-    print 'The compu. has chosen ' + comp_choice + '.'
+    print 'Computer chooses ' + comp_choice
+
+    # use if/elif/else to determine winner, print winner message
+    if winner == 0:
+        print 'Player and computer tie!'
+    elif winner >= 3:
+        print 'Player wins!'
+    elif winner > 0 and winner <= 2:
+        print 'Computer wins!'
+    else:
+        print '- debug test - Printing the winner - ' + winner
+    
+    # print a blank line to separate consecutive games
+    print
 
     
-    def evaluate_winner(play_number, comp_number):
-    # compute difference of comp_number and player_number modulo five
-        if play_number ==  comp_number:
-            message = 'We have a tie.'
-        #elif :
-            #message = 'The winner is ' + player_choice + ' with ' + comp_choice + '.'
-        else:
-            message = '- debug test error -'
-        print message
-        # use if/elif/else to determine winner, print winner message
-    
-    evaluate_winner(play_number, comp_number)
-    
 # test your code - THESE CALLS MUST BE PRESENT IN YOUR SUBMITTED CODE
-rpsls("rock")
-rpsls("spock")
-rpsls("paper")
-rpsls("lizard")
-rpsls("scissors")
+rpsls('rock')
+rpsls('spock')
+rpsls('paper')
+rpsls('lizard')
+rpsls('scissors')
+#rpsls('test')
 
 # always remember to check your completed program against the grading rubric
