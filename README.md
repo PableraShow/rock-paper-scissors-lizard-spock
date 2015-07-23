@@ -1,4 +1,4 @@
-# Rock paper scissors lizard spock game
+# Rock paper scissors lizard Spock game
 
 The game
 -------
