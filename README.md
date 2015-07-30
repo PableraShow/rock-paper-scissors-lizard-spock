@@ -42,3 +42,8 @@ The output of running your program should have the following form:
     Player chooses scissors
     Computer chooses Spock
     Computer wins!
+
+
+![jpg](images4readme/logo-python.jpg)
+
+*Stars and Forks are welcome :)*
