@@ -1,5 +1,7 @@
 # Rock paper scissors lizard Spock game
 
+*Stars, Forks and Pull Requests are welcome :)*
+
 The game
 -------
 It is first used to settle a dispute about what to watch on TV between Sheldon and Raj in "The Lizard-Spock Expansion".
@@ -43,7 +45,6 @@ The output of running your program should have the following form:
     Computer chooses Spock
     Computer wins!
 
-
 ![jpg](images4readme/logo-python.jpg)
 
-*Stars and Forks are welcome :)*
+Thanks for read it!
